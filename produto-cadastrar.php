@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Redirecionar para a página de listagem ou exibir uma mensagem de sucesso
     echo "Produto adicionado com sucesso!";
     // Ou redirecionar para outra página
-    // header("Location: listar_produtos.php");
+    // header("Location: produto-listar.php");
 }
 ?>
 <!DOCTYPE html>
@@ -44,8 +44,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="alert alert-success" role="alert">
                 Produto adicionado com sucesso!
             </div>
-            <a href="produto-cadastrar.php" class="btn btn-primary">Cadastrar Outro Produto</a>
-            <a href="listar_produtos.php" class="btn btn-secondary">Ver Produtos</a>
+            <a href="produto-alterar.php" class="btn btn-primary">AAlterar Produto</a>
+            <a href="produto-listar.php" class="btn btn-secondary">Ver Produtos</a>
         </div>';
     }
     ?>

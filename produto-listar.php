@@ -46,6 +46,8 @@ $produtos = $produto->listarProdutos();
                     <th>Descrição</th>
                     <th>Preço</th>
                     <th>Quantidade</th>
+                    <th>Alterar</th>
+                    <th>Excluir</th>
                 </tr>
             </thead>
             <tbody>
@@ -56,6 +58,7 @@ $produtos = $produto->listarProdutos();
                         <td><?php echo htmlspecialchars($produto['descricao']); ?></td>
                         <td><?php echo htmlspecialchars(number_format($produto['preco'], 2, ',', '.')); ?></td>
                         <td><?php echo htmlspecialchars($produto['quantidade']); ?></td>
+                        <td><a href="produto-alterar.php?id=<?php echo $produto['id']; ?>">Alterar Produto</a></td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>

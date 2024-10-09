@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $preco = $_POST['preco'];
     $quantidade = $_POST['quantidade'];
     
-    $produto->alterarProduto($id, $nome, $descricao, $preco, $quantidade);
+    $produto->excluirProduto($id);
     header("Location: produto-listar.php");
 }
 ?>
@@ -46,33 +46,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
 
 <div class="container mt-5">
-    <h1 class="text-center mb-4">Alterar Produto</h1>
+    <h1 class="text-center mb-4">Excluir Produto</h1>
 
     <form method="POST" class="row g-3">
         <input type="hidden" name="id" value="<?php echo $produtoAlvo['id']; ?>">
 
         <div class="col-md-6">
-            <label for="nome" class="form-label">Nome:</label>
-            <input type="text" name="nome" class="form-control" value="<?php echo htmlspecialchars($produtoAlvo['nome']); ?>" required>
+            <label for="nome" class="form-label">Id:</label>
+            <input type="text" name="id" class="form-control" value="<?php echo htmlspecialchars($produtoAlvo['id']); ?>" required>
         </div>
 
-        <div class="col-md-6">
-            <label for="descricao" class="form-label">Descrição:</label>
-            <input type="text" name="descricao" class="form-control" value="<?php echo htmlspecialchars($produtoAlvo['descricao']); ?>" required>
-        </div>
-
-        <div class="col-md-6">
-            <label for="preco" class="form-label">Preço:</label>
-            <input type="number" step="0.01" name="preco" class="form-control" value="<?php echo htmlspecialchars($produtoAlvo['preco']); ?>" required>
-        </div>
-
-        <div class="col-md-6">
-            <label for="quantidade" class="form-label">Quantidade:</label>
-            <input type="number" name="quantidade" class="form-control" value="<?php echo htmlspecialchars($produtoAlvo['quantidade']); ?>" required>
-        </div>
+        
 
         <div class="col-12">
-            <button type="submit" class="btn btn-primary w-100">Salvar Alterações</button>
+            <button type="submit" class="btn btn-primary w-100">Excluir</button>
         </div>
 
         <div class="col-12 text-center">
